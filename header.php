@@ -6,20 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Title -->
       <title>Halim | Onepage Multipurpose Website</title>
-      <!-- Font Google -->
-      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-      <!-- Bootstrap Css -->
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Font Awesome Css -->
-      <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-      <!-- Magnific Popup Css -->
-      <link href="assets/css/magnific-popup.css" rel="stylesheet">
-      <!-- Owl Carousel Css -->
-      <link href="assets/css/owl.carousel.css" rel="stylesheet">
-      <!-- Main Css -->
-      <link href="assets/css/style.css" rel="stylesheet">
-      <!-- Responsive Css -->
-      <link href="assets/css/responsive.css" rel="stylesheet">
+      <?php wp_head();?>
    </head>
    <body>
 	   <section class="header-top">
@@ -27,17 +14,17 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-12">
 						<div class="header-left">
-							<a href=""><i class="fa fa-envelope"></i> info@halim.com</a>
-							<a href=""><i class="fa fa-phone"></i> 23457689</a>
+							<a href=""><i class="fab fa-envelope"></i> info@halim.com</a>
+							<a href=""><i class="fas fa-phone"></i> 23457689</a>
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-12 text-right">
 						<div class="header-social">
-							<a href=""><i class="fa fa-facebook"></i></a>
-							<a href=""><i class="fa fa-twitter"></i></a>
-							<a href=""><i class="fa fa-youtube"></i></a>
-							<a href=""><i class="fa fa-linkedin"></i></a>
-							<a href=""><i class="fa fa-google-plus"></i></a>
+							<a href=""><i class="fab fa-facebook"></i></a>
+							<a href=""><i class="fab fa-twitter"></i></a>
+							<a href=""><i class="fab fa-youtube"></i></a>
+							<a href=""><i class="fab fa-linkedin"></i></a>
+							<a href=""><i class="fab fa-google-plus"></i></a>
 						</div>
 					</div>
 				</div>

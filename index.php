@@ -2,7 +2,7 @@
       <!-- Slider Area Start -->
       <section class="slider-area" id="home">
          <div class="slider owl-carousel">
-            <div class="single-slide" style="background-image:url('assets/img/slider/slide-1.jpg')">
+            <div class="single-slide" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-1.jpg')">
                <div class="container">
                   <div class="row">
                      <div class="col-xl-12">
@@ -18,7 +18,7 @@
                   </div>
                </div>
             </div>
-            <div class="single-slide" style="background-image:url('assets/img/slider/slide-2.jpg')">
+            <div class="single-slide" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-2.jpg')">
                <div class="container">
                   <div class="row">
                      <div class="col-xl-12">
@@ -34,7 +34,7 @@
                   </div>
                </div>
             </div>
-            <div class="single-slide" style="background-image:url('assets/img/slider/slide-3.jpg')">
+            <div class="single-slide" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-3.jpg')">
                <div class="container">
                   <div class="row">
                      <div class="col-xl-12">
@@ -89,7 +89,7 @@
                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
                   </div>
                   <div class="single_about">
-                     <i class="fa fa-pencil"></i>
+                     <i class="fa fa-user"></i>
                      <h4>our history</h4>
                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
                   </div>
@@ -287,15 +287,15 @@
             <div class="row">
                <div class="col-md-4">
                   <div class="single-team">
-                     <img src="assets/img/team/1.jpg" alt="" />
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/team/1.jpg" alt="" />
                      <div class="team-hover">
                         <div class="team-content">
                            <h4>john doe <span>web developer</span></h4>
                            <ul>
-                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                              <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
                            </ul>
                         </div>
                      </div>
@@ -303,15 +303,15 @@
                </div>
                <div class="col-md-4">
                   <div class="single-team">
-                     <img src="assets/img/team/2.jpg" alt="" />
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/team/2.jpg" alt="" />
                      <div class="team-hover">
                         <div class="team-content">
                            <h4>john doe <span>web developer</span></h4>
                            <ul>
-                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                              <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
                            </ul>
                         </div>
                      </div>
@@ -319,15 +319,15 @@
                </div>
                <div class="col-md-4">
                   <div class="single-team">
-                     <img src="assets/img/team/3.jpg" alt="" />
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/team/3.jpg" alt="" />
                      <div class="team-hover">
                         <div class="team-content">
                            <h4>john doe <span>web developer</span></h4>
                            <ul>
-                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                              <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
                            </ul>
                         </div>
                      </div>
@@ -356,28 +356,28 @@
                   <div class="testimonials owl-carousel">
                      <div class="single-testimonial">
                         <div class="testi-img">
-                           <img src="assets/img/testimonials/03.png" alt="" />
+                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials/03.png" alt="" />
                         </div>
                         <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
                         <h4>john doe <span>web developer</span></h4>
                      </div>
                      <div class="single-testimonial">
                         <div class="testi-img">
-                           <img src="assets/img/testimonials/01.png" alt="" />
+                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials/01.png" alt="" />
                         </div>
                         <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
                         <h4>john doe <span>web developer</span></h4>
                      </div>
                      <div class="single-testimonial">
                         <div class="testi-img">
-                           <img src="assets/img/testimonials/04.png" alt="" />
+                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials/04.png" alt="" />
                         </div>
                         <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
                         <h4>john doe <span>web developer</span></h4>
                      </div>
                      <div class="single-testimonial">
                         <div class="testi-img">
-                           <img src="assets/img/testimonials/02.png" alt="" />
+                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials/02.png" alt="" />
                         </div>
                         <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
                         <h4>john doe <span>web developer</span></h4>
@@ -402,7 +402,7 @@
             <div class="row">
                <div class="col-md-4">
                   <div class="single-blog">
-                     <img src="assets/img/blog/blog1.jpg" alt="" />
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog1.jpg" alt="" />
                      <div class="post-content">
                         <div class="post-title">
                            <h4><a href="#">blog title</a></h4>
@@ -420,7 +420,7 @@
                </div>
                <div class="col-md-4">
                   <div class="single-blog">
-                     <img src="assets/img/blog/blog2.jpg" alt="" />
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog2.jpg" alt="" />
                      <div class="post-content">
                         <div class="post-title">
                            <h4><a href="#">blog title</a></h4>
@@ -438,7 +438,7 @@
                </div>
                <div class="col-md-4">
                   <div class="single-blog">
-                     <img src="assets/img/blog/blog3.jpg" alt="" />
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog3.jpg" alt="" />
                      <div class="post-content">
                         <div class="post-title">
                            <h4><a href="#">blog title</a></h4>
