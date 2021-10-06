@@ -25,6 +25,10 @@ function halim_custom_posts(){
         'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
     ));
 }
+
+
+
+
 add_action('init', 'halim_custom_posts');
 
 

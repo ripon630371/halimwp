@@ -2,55 +2,46 @@
       <!-- Slider Area Start -->
       <section class="slider-area" id="home">
          <div class="slider owl-carousel">
-            <div class="single-slide" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-1.jpg')">
+            <?php
+               $args = array(
+                  'post_type' => 'sliders',
+                  'posts_per_page' => 3
+               );
+               $query = new WP_Query($args);
+               while($query -> have_posts()){
+                  $query -> the_post();
+
+                  $sub_heading = get_post_meta(get_the_ID(), 'sub_heading',true);
+                  $btn_text = get_post_meta(get_the_ID(), 'btn_text',true);
+                  $btn_link = get_post_meta(get_the_ID(), 'btn_link',true);
+                  //$btn_text = get_field('btn_text');
+                  //$btn_link = get_field('btn_link');
+            ?>
+
+
+            <div class="single-slide" style="background-image:url('<?php the_post_thumbnail_url();?>)">
                <div class="container">
                   <div class="row">
                      <div class="col-xl-12">
                         <div class="slide-table">
                            <div class="slide-tablecell">
-                              <h4>We Are Advanced Batch 11</h4>
-                              <h2>Digital Agency</h2>
-                              <p>We are a passionate digital design agency that specializes in beautiful and easy-to-use digital design & web development services.</p>
-                              <a href="#" class="box-btn">our projects <i class="fa fa-angle-double-right"></i></a>
+                              <h4><?php echo $sub_heading; ?></h4>
+                              <h2><?php the_title(); ?></h2>
+                              <?php the_content(); ?>
+                              <a href="<?php echo $btn_link; ?>" class="box-btn"><?php echo $btn_text;?> <i class="fa fa-angle-double-right"></i></a>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-            <div class="single-slide" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-2.jpg')">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-xl-12">
-                        <div class="slide-table">
-                           <div class="slide-tablecell">
-                              <h4>We Are Halim</h4>
-                              <h2>Modern Agency</h2>
-                              <p>We are a passionate digital design agency that specializes in beautiful and easy-to-use digital design & web development services.</p>
-                              <a href="#" class="box-btn">contact us <i class="fa fa-angle-double-right"></i></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="single-slide" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-3.jpg')">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-xl-12">
-                        <div class="slide-table">
-                           <div class="slide-tablecell">
-                              <h4>
-                              We Are Halim</h4>
-                              <h2>Creative Agency</h2>
-                              <p>We are a passionate digital design agency that specializes in beautiful and easy-to-use digital design & web development services.</p>
-                              <a href="#" class="box-btn">crreative team <i class="fa fa-angle-double-right"></i></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+         <?php
+            }
+            wp_reset_postdata();
+         ?>
+
+
+
          </div>
       </section>
       <!-- Slider Area Start -->
