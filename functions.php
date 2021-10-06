@@ -3,6 +3,7 @@
 //Halim Theme Setup fucntion hock here
 function halim_setup_theme(){
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails', array('sliders'));
     load_theme_textdomain('halim', get_template_directory_uri().'/languages');
 
     //Rgister menu here 
@@ -11,6 +12,20 @@ function halim_setup_theme(){
     ));
 }
 add_action('after_setup_theme','halim_setup_theme');
+
+//custom post function 
+function halim_custom_posts(){
+    //Slider custom post
+    register_post_type('sliders', array(
+        'labels'    => array(
+            'name'  => __('Halim Slider', 'halim'),
+            'singular_name' => __('Slider', 'halim')
+        ),
+        'public' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+    ));
+}
+add_action('init', 'halim_custom_posts');
 
 
 
