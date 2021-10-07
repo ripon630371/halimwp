@@ -11,11 +11,13 @@
                while($query -> have_posts()){
                   $query -> the_post();
 
-                  $sub_heading = get_post_meta(get_the_ID(), 'sub_heading',true);
-                  $btn_text = get_post_meta(get_the_ID(), 'btn_text',true);
-                  $btn_link = get_post_meta(get_the_ID(), 'btn_link',true);
-                  //$btn_text = get_field('btn_text');
-                  //$btn_link = get_field('btn_link');
+                  //$sub_heading = get_post_meta(get_the_ID(), 'sub_heading',true);
+                  //$btn_text = get_post_meta(get_the_ID(), 'btn_text',true);
+                 //$btn_link = get_post_meta(get_the_ID(), 'btn_link',true);
+
+                  $sub_heading = get_field('sub_title');
+                  $btn_text = get_field('btn_text');
+                  $btn_link = get_field('btn_link');
             ?>
 
 
@@ -28,7 +30,11 @@
                               <h4><?php echo $sub_heading; ?></h4>
                               <h2><?php the_title(); ?></h2>
                               <?php the_content(); ?>
-                              <a href="<?php echo $btn_link; ?>" class="box-btn"><?php echo $btn_text;?> <i class="fa fa-angle-double-right"></i></a>
+                              <?php
+                                 if($btn_text){ ?>
+                                    <a href="<?php echo $btn_link; ?>" class="box-btn"><?php echo $btn_text;?> <i class="fa fa-angle-double-right"></i></a>
+                                 <?php }
+                              ?>
                            </div>
                         </div>
                      </div>
@@ -183,54 +189,31 @@
                </div>
             </div>
             <div class="row">
+               <?php
+                  $args = array(
+                     'post_type' => 'services',
+                     'posts_per_page' => 6
+                  );
+                  $query = new WP_Query($args);
+                  while($query -> have_posts()){
+                  $query -> the_post();
+                  $service_icon = get_field('service_icon');
+               ?>
                <div class="col-lg-4 col-md-6">
                   <!-- Single Service -->
                   <div class="single-service">
-                     <i class="fa fa-laptop"></i>
-                     <h4>Web Design </h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
+                     <i class="<?php echo $service_icon;?>"></i>
+                     <h4><?php the_title(); ?></h4>
+                     <?php the_content(); ?>
                   </div>
                </div>
-               <div class="col-lg-4 col-md-6">
-                  <!-- Single Service -->
-                  <div class="single-service">
-                     <i class="fa fa-gears"></i>
-                     <h4>Web Development</h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <!-- Single Service -->
-                  <div class="single-service">
-                     <i class="fa fa-mobile"></i>
-                     <h4>Responsive Design</h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <!-- Single Service -->
-                  <div class="single-service">
-                     <i class="fa fa-magic"></i>
-                     <h4>Graphic Design</h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <!-- Single Service -->
-                  <div class="single-service">
-                     <i class="fa fa-pencil"></i>
-                     <h4>Creative Design</h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <!-- Single Service -->
-                  <div class="single-service">
-                     <i class="fa fa-fa fa-lightbulb-o"></i>
-                     <h4>Branding</h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  </div>
-               </div>
+               <?php
+                  }
+                   wp_reset_postdata();
+               ?>     
+
+              
+
             </div>
          </div>
       </section>

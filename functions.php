@@ -3,7 +3,7 @@
 //Halim Theme Setup fucntion hock here
 function halim_setup_theme(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('sliders'));
+    add_theme_support('post-thumbnails', array('sliders','Services'));
     load_theme_textdomain('halim', get_template_directory_uri().'/languages');
 
     //Rgister menu here 
@@ -25,6 +25,15 @@ function halim_custom_posts(){
         'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
     ));
 }
+// Services post type function
+register_post_type('services', array(
+    'labels' => array(
+        'name' => __('Services', 'halim'),
+        'singular_name' => __('Service', 'halim')
+    ),
+    'public' => true,
+    'supports' => array('title', 'editor', 'custom-fields')
+));
 
 
 
