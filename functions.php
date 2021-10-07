@@ -3,7 +3,7 @@
 //Halim Theme Setup fucntion hock here
 function halim_setup_theme(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('sliders','Services'));
+    add_theme_support('post-thumbnails', array('sliders','Services','team'));
     load_theme_textdomain('halim', get_template_directory_uri().'/languages');
 
     //Rgister menu here 
@@ -35,6 +35,15 @@ register_post_type('services', array(
     'supports' => array('title', 'editor', 'custom-fields')
 ));
 
+// Team Custom Post
+register_post_type('team', array(
+    'labels' => array(
+        'name' => __('Teams', 'halim'),
+        'singular_name' => __('Team', 'halim')
+    ),
+    'public' => true,
+    'supports' => array('title', 'editor', 'thumbnail', 'custom-field', 'page-attributes')
+));
 
 
 
