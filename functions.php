@@ -56,7 +56,23 @@ register_post_type('testimonial', array(
 }
 add_action('init', 'halim_custom_posts');
 
+// Halim Custom Widgets
 
+function halim_widgest(){
+
+     // Sidebar
+     register_sidebar(array(
+        'name' => __('Main Sidebar','halim'),
+        'id' => 'main_sidebar',
+        'description' => __('Main Sidebar for Blog Page', 'halim'),
+        'before_widget' => '<div class="single-sidebar single-sidebar">',
+        'after_widget' => '</div> ',
+        'before_title' => '<h4> <p>',
+        'after_title' => '</h4> </p>'
+    ));
+
+}
+add_action('widgets_init','halim_widgest');
 
 //Comment fields Order
 

@@ -1715,3 +1715,7 @@ a.box-btn:hover i.fa {
 	border: 1px solid #ddd;
 	padding: 3px;
   }
+.avatar.avatar-32.photo {
+	width: 60px;
+	border-radius: 50%;
+}
