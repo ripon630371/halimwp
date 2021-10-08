@@ -71,6 +71,39 @@ function halim_widgest(){
         'after_title' => '</h4> </p>'
     ));
 
+    // Footer Sidebar 2
+    register_sidebar(array(
+        'name' => __('Footer Sidebar 2','halim'),
+        'id' => 'footer_sidebar2',
+        'description' => __('Footer Widget 2 for Showing Widget', 'halim'),
+        'before_widget' => '<div class="single-footer">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>'
+    ));
+
+    // Footer Sidebar 3
+    register_sidebar(array(
+        'name' => __('Footer Sidebar 3','halim'),
+        'id' => 'footer_sidebar3',
+        'description' => __('Footer Widget 3 for Showing Widget', 'halim'),
+        'before_widget' => '<div class="single-footer">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>'
+    ));
+
+    // Footer Sidebar 4
+    register_sidebar(array(
+        'name' => __('Footer Sidebar 4','halim'),
+        'id' => 'footer_sidebar4',
+        'description' => __('Footer Widget 4 for Showing Widget', 'halim'),
+        'before_widget' => '<div class="single-footer contact-box">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>'
+    ));
+
 }
 add_action('widgets_init','halim_widgest');
 
