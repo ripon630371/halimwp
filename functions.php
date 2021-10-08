@@ -3,7 +3,7 @@
 //Halim Theme Setup fucntion hock here
 function halim_setup_theme(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('sliders','Services','team','testimonial'));
+    add_theme_support('post-thumbnails', array('post','sliders','Services','team','testimonial'));
     load_theme_textdomain('halim', get_template_directory_uri().'/languages');
 
     //Rgister menu here 
@@ -24,7 +24,6 @@ function halim_custom_posts(){
         'public' => true,
         'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
     ));
-}
 // Services post type function
 register_post_type('services', array(
     'labels' => array(
@@ -54,8 +53,39 @@ register_post_type('testimonial', array(
     'supports' => array('thumbnail', 'custom-field', 'page-attributes')
 ));
 
-
+}
 add_action('init', 'halim_custom_posts');
+
+
+
+//Comment fields Order
+
+function halim_comment_filed( $fields ) {
+    $comment = $fields['comment'];
+    $author = $fields['author'];
+    $email = $fields['email'];
+    $url = $fields['url'];
+    $cookies = $fields['cookies'];
+
+    unset( $fields['comment'] );
+    unset( $fields['author'] );
+    unset( $fields['email'] );
+    unset( $fields['url'] );
+    unset( $fields['cookies'] );
+    
+    $fields['author'] = $author;
+    $fields['email'] = $email;
+    $fields['url'] = $url;
+    $fields['comment'] = $comment;
+    $fields['cookies'] = $cookies;
+    
+    return $fields;
+}
+add_filter( 'comment_form_fields', 'halim_comment_filed' );
+
+
+
+
 
 
 
