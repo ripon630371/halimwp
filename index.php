@@ -331,34 +331,34 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="testimonials owl-carousel">
+                  <?php
+                     $args = array(
+                        'post_type'       => 'testimonial',
+                        'posts_per_page'  => 3,
+                        'orderby'         => 'menu_order',
+                        'order'           => 'ASC'
+                     );
+                     $query = new WP_Query($args);
+                     while($query -> have_posts()){
+                     $query -> the_post();
+                     $name = get_field('name');
+                     $designation = get_field('designation');
+                     $description = get_field('description');
+                  ?>
+
                      <div class="single-testimonial">
                         <div class="testi-img">
-                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials/03.png" alt="" />
+                        <?php the_post_thumbnail(); ?>
                         </div>
-                        <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
-                        <h4>john doe <span>web developer</span></h4>
+                        <?php echo $description; ?>
+                        <h4><?php echo $name; ?><span><?php echo $designation; ?></span></h4>
                      </div>
-                     <div class="single-testimonial">
-                        <div class="testi-img">
-                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials/01.png" alt="" />
-                        </div>
-                        <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
-                        <h4>john doe <span>web developer</span></h4>
-                     </div>
-                     <div class="single-testimonial">
-                        <div class="testi-img">
-                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials/04.png" alt="" />
-                        </div>
-                        <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
-                        <h4>john doe <span>web developer</span></h4>
-                     </div>
-                     <div class="single-testimonial">
-                        <div class="testi-img">
-                           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials/02.png" alt="" />
-                        </div>
-                        <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
-                        <h4>john doe <span>web developer</span></h4>
-                     </div>
+
+                     <?php
+                        }
+                        wp_reset_postdata();
+                     ?> 
+
                   </div>
                </div>
             </div>
