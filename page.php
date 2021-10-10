@@ -4,7 +4,20 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
-            <?php get_template_part('inc/breadcumb');?>
+                <div class="breadcumb">
+                    <?php 
+                        while(have_posts()){
+                            the_post();
+                            ?>
+                            <h4><?php the_title(); ?></h4>
+                            <ul>
+                                <li><a href="<?php echo site_url(); ?>"></a>Home</li> / 
+                                <li><?php the_title(); ?></li>
+                            </ul>
+                        <?php }
+                    ?>
+                    
+                </div>
             </div>
         </div>
     </div>
