@@ -5,11 +5,18 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="breadcumb">
-                    <h4>Single Blog</h4>
-                    <ul>
-                        <li><a href=""></a>Home</li> / 
-                        <li>Single Blog</li>
-                    </ul>
+                    <?php 
+                        while(have_posts()){
+                            the_post();
+                            ?>
+                            <h4><?php the_title(); ?></h4>
+                            <ul>
+                                <li><a href="<?php echo site_url(); ?>"></a>Home</li> / 
+                                <li><?php the_title(); ?></li>
+                            </ul>
+                        <?php }
+                    ?>
+                    
                 </div>
             </div>
         </div>
