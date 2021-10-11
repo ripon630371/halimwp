@@ -52,6 +52,17 @@ register_post_type('testimonial', array(
     'public' => true,
     'supports' => array('thumbnail', 'custom-field', 'page-attributes')
 ));
+// Gallery Custom Post
+register_post_type('gallery', array(
+    'labels' => array(
+        'name' => __('Gallerys', 'halim'),
+        'singular_name' => __('gallery', 'halim')
+    ),
+    'public' => true,
+    'supports' => array('title','custom-field', 'page-attributes')
+));
+
+
 
 }
 add_action('init', 'halim_custom_posts');
