@@ -401,6 +401,7 @@ get_header();?>
                         </div>
                         <div class="pots-meta">
                            <ul>
+                              <li><a href="#"><?php the_category();?></a></li>
                               <li><a href="#"><?php echo get_the_date(); ?></a></li>
                               <li><a href="#"><?php echo get_the_author(); ?></a></li>
                            </ul>
