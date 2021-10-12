@@ -3,7 +3,7 @@
 //Halim Theme Setup fucntion hock here
 function halim_setup_theme(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('post','sliders','Services','team','testimonial'));
+    add_theme_support('post-thumbnails', array('post','sliders','Services','team','testimonial','404page'));
     load_theme_textdomain('halim', get_template_directory_uri().'/languages');
 
     //Rgister menu here 
@@ -62,6 +62,15 @@ register_post_type('gallery', array(
     'supports' => array('title','custom-field', 'page-attributes')
 ));
 
+// 404 Custom Image
+register_post_type('404page', array(
+    'labels' => array(
+        'name' => __('404 Page', 'halim'),
+        'singular_name' => __('404 Page', 'halim')
+    ),
+    'public' => true,
+    'supports' => array('custom-field')
+));
 
 
 }
