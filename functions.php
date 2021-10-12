@@ -3,7 +3,7 @@
 //Halim Theme Setup fucntion hock here
 function halim_setup_theme(){
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('post','sliders','Services','team','testimonial','404page'));
+    add_theme_support('post-thumbnails', array('post','sliders','Services','team','testimonial','404page','portfolio'));
     load_theme_textdomain('halim', get_template_directory_uri().'/languages');
 
     //Rgister menu here 
@@ -71,7 +71,26 @@ register_post_type('404page', array(
     'public' => true,
     'supports' => array('custom-field')
 ));
+// Portfolio Custom Post
+register_post_type('portfolio', array(
+    'labels' => array(
+        'name' => __('Portfolios', 'halim'),
+        'singular_name' => __('Portfolio', 'halim')
+    ),
+    'public' => true,
+    'supports' => array('title', 'editor', 'thumbnail', 'custom-field', 'page-attributes')
+));
 
+// Portfolio Taxonomy
+
+register_taxonomy('portfolio-cat', 'portfolio',array(
+    'labels' => array(
+        'name' => __('Categories', 'halim'),
+        'singular_name' => __('Category', 'halim')
+    ),
+    'hierarchical' => true,
+    'show_admin_column' => true
+));
 
 }
 add_action('init', 'halim_custom_posts');
