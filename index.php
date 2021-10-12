@@ -7,7 +7,7 @@
                 <div class="breadcumb">
                     <h4>Blog</h4>
                     <ul>
-                        <li><a href=""></a>Home</li> / 
+                    <li><a href="<?php echo site_url();?>">Home</a></li>  / 
                         <li>Blog</li>
                     </ul>
                 </div>
@@ -44,6 +44,7 @@
             </div>
                <?php
                   }
+                  the_posts_pagination();
                   wp_reset_postdata();
                ?>
          </div>
